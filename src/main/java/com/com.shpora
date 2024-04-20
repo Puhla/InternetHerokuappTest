@@ -1,0 +1,34 @@
+
+@FindBy(id = "result")
+WebElement result;
+public AlertsPage verifyResult (String text) {
+	Assert.assertTrue (result.getText ().contains (text));
+	return this;
+}
+
+
+public AlertsPage sendMessageToAlert (String message) {
+	click (javaScriptAlertButton);
+
+	if (message != null) {
+		driver.switchTo ().alert ().sendKeys (message);
+		driver.switchTo ().alert ().dismiss ();
+	}
+	return this;
+}
+
+@FindBy(css = ".example")
+WebElement alertExample;
+public AlertsPage selectAlerts () {
+	new AlertsPage (driver);
+	return new AlertsPage (driver);
+}
+public AlertsPage selectResult (String confirm) {
+	click (javaScriptAlertButton);
+	if (confirm != null && confirm.equals ("OK")) {
+		driver.switchTo ().alert ().accept ();
+	} else if (confirm != null && confirm.equals ("Cancel")) {
+		driver.switchTo ().alert ().dismiss ();
+	}
+	return this;
+}
