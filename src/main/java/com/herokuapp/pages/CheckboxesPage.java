@@ -8,10 +8,12 @@ public class CheckboxesPage extends BasePage{
 public CheckboxesPage (WebDriver driver) {
 	super (driver);
 }
-@FindBy(css="input:nth-child(1)")
+
+
+@FindBy(xpath="/form[@id='checkboxes']/input[1]")
 WebElement check1;
 
-@FindBy(css="input:nth-child(3)")
+@FindBy(css="input:nth-child(2)")
 WebElement check2;
 public CheckboxesPage selectCheckbox(String[] check) {
 	for (int i = 0; i < check.length; i++) {

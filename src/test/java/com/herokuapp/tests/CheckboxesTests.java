@@ -13,6 +13,7 @@ public void precondition(){
 
 @Test
 public void checkbox(){
-	new CheckboxesPage (driver).selectCheckbox(new String[]{" checkbox 1 "});
+	new CheckboxesPage (driver)
+			.selectCheckbox(new String[]{" checkbox 1"});
 }
 }

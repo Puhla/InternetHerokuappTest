@@ -51,6 +51,25 @@ public HomePage picUpload() {
 	click(file);
 	return new HomePage(driver);
 }
+
+
+@FindBy(css="a[href='/broken_images']")
+WebElement brokenImages;
+public HomePage checkBrokenImages() {
+	click(brokenImages);
+	return new HomePage(driver);
+}
+
+@FindBy(css="a[href='/drag_and_drop']")
+WebElement dragAndDrop;
+
+public HomePage selectDragAndDrop () {
+	click (dragAndDrop);
+	return new HomePage (driver);
+}
+
+
+
 }
 
 
